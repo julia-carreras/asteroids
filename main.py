@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import Player
 
 def main():
     pygame.init()
@@ -14,11 +15,15 @@ def main():
                 return
     
             screen.fill((0, 0, 0))
+            player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+            player.draw(screen)
             pygame.display.flip()
             
             delta_time = clock.tick(60)
             dt = delta_time / 1000
 
+
+        
 
 
     print('''
