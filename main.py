@@ -33,7 +33,12 @@ def main():
                 return
         
         # Take player's input
-        updatable.update(dt) 
+        updatable.update(dt)
+        for asteroid in asteroids:
+            if player.collides_with(asteroid):
+                print("Game Over!")
+                quit()
+
         
         # Clear and draw in screen (buffer)
         screen.fill((0, 0, 0)) 
